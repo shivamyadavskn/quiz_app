@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'question.dart';
 
 void main() {
   runApp(const MyApp());
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
@@ -18,6 +20,11 @@ class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    int index = 0;
+    void updateIndex() {
+      index = index + 1;
+    }
+
     List<String> question = [
       "Which is your color",
       "Which is your best number"
@@ -26,21 +33,21 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(),
       body: Column(
         children: [
-          Text(question[0]),
+          Questions(question: question[index]),
           TextButton(
             onPressed: () {},
             child: const Text("red"),
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: updateIndex,
             child: const Text("yellow"),
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: updateIndex,
             child: const Text("green"),
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: updateIndex,
             child: const Text("white"),
           ),
         ],
