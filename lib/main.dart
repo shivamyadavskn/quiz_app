@@ -37,9 +37,7 @@ class HomePage extends StatelessWidget {
             child: const Text("yellow"),
           ),
           TextButton(
-            onPressed: () {
-              print("second option");
-            },
+            onPressed: () {},
             child: const Text("green"),
           ),
           TextButton(
